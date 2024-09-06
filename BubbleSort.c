@@ -3,7 +3,7 @@
 void Bubble(int array[],int tamanho);
 
 int main(){
-    int array[] = {10,4,2,7,8,9};
+    int array[] = {10,4,4,1,8,9};
     
     int tamanho = (sizeof(array)/sizeof(array[0]))-1;
 
@@ -24,14 +24,13 @@ int main(){
 
 void Bubble(int array[],int tamanho){
     int aux;
-    for(int j=0;j<=tamanho;j++){
-        for(int i=0;i<=tamanho-1;i++){
-            if(array[i] > array[i+1]){
+    for(int j=1;j<=tamanho;j++){
+        for(int i=tamanho;i>=j;i--){
+            if(array[i] > array[i-1]){
                 aux = array[i];
-                array[i] = array[i+1];
-                array[i+1] = aux;
+                array[i] = array[i-1];
+                array[i-1] = aux;
             }
         }
     }
-
 }
